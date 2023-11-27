@@ -1,0 +1,1 @@
+This folder contains the frontend code for our project. Here, you'll find all the files related to the user interface, design, and client-side functionality.

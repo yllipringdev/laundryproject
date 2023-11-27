@@ -1,0 +1,1 @@
+This directory holds the mobile application code for our project.
