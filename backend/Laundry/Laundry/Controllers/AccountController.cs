@@ -39,12 +39,12 @@ namespace Laundry.Controllers
 
                 if (result.Succeeded)
                 {
-                    // Return a JSON object for success
+                    await userManager.AddToRoleAsync(applicationUser, "User");
+
                     return Ok(new { message = "Account Add Success" });
                 }
                 else
                 {
-                    // Return a JSON object for failure
                     return BadRequest(new { errors = result.Errors });
                 }
             }
@@ -64,11 +64,15 @@ namespace Laundry.Controllers
                     bool result = await userManager.CheckPasswordAsync(applicationUser, loginDTO.Password);
                     if (result)
                     {
+                        var userRoles = await userManager.GetRolesAsync(applicationUser);
+
                         var claims = new List<Claim>
                 {
                     new Claim("email", applicationUser.Email),
                     new Claim("username", applicationUser.UserName)
                 };
+
+                        claims.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
 
                         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:SecretKey"]));
                         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
@@ -83,7 +87,7 @@ namespace Laundry.Controllers
 
                         var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
 
-                        return Ok(new { token = token, expires = Sectoken.ValidTo, email = applicationUser.Email, username = applicationUser.UserName });
+                        return Ok(new { token = token, expires = Sectoken.ValidTo, email = applicationUser.Email, username = applicationUser.UserName, roles = userRoles });
                     }
                     else
                     {
@@ -99,8 +103,6 @@ namespace Laundry.Controllers
             return StatusCode(401);
         }
 
-
-
         [HttpGet("authenticateddetails")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult GetAuthenticatedDetails()
@@ -109,13 +111,13 @@ namespace Laundry.Controllers
 
             var email = claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
             var username = claims.FirstOrDefault(x => x.Type == "username")?.Value;
-            //var roles = claims.Where(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Select(x => x.Value);
+            var roles = claims.Where(x => x.Type == ClaimTypes.Role).Select(x => x.Value)?.ToList();
 
             var userDetails = new AuthenticatedUserDetailsDTO
             {
                 Email = email,
-                Username = username
-                //Roles = roles.ToList()
+                Username = username,
+                Roles = roles
             };
 
             return Ok(userDetails);
