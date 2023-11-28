@@ -2295,11 +2295,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\Laundry\\Laundry\\Laundry.csproj",
+      "projectUniqueName": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\laundryproject\\backend\\Laundry\\Laundry\\Laundry.csproj",
       "projectName": "Laundry",
-      "projectPath": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\Laundry\\Laundry\\Laundry.csproj",
+      "projectPath": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\laundryproject\\backend\\Laundry\\Laundry\\Laundry.csproj",
       "packagesPath": "C:\\Users\\abytyci\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\Laundry\\Laundry\\obj\\",
+      "outputPath": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\laundryproject\\backend\\Laundry\\Laundry\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

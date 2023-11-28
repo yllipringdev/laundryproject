@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OfXmBi4J19NuaNmM4cAXJw5Su3Q0XgC5/9y1vONOy1U1xMlaX02f2uwm/VNOqbnJaT1g63zhAEjmUaNAYJSKuA==",
+  "dgSpecHash": "RQ+hjGDGz+MyEXWizqt6EyIwwzMCTziHiJsjX075Cvh7NwLf8ABKjVbOlaUscn/Kb9zKXqAvt9yWoxNDlNhIsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\Laundry\\Laundry\\Laundry.csproj",
+  "projectFilePath": "C:\\Users\\abytyci\\Desktop\\Internet Explorer\\laundryproject\\backend\\Laundry\\Laundry\\Laundry.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abytyci\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\abytyci\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.25\\microsoft.aspnetcore.authentication.jwtbearer.6.0.25.nupkg.sha512",
