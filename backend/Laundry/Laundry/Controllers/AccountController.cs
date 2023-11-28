@@ -26,14 +26,23 @@ namespace Laundry.Controllers
             this.userManager = userManager;
             this.config = _config;
         }
+
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
             if (ModelState.IsValid)
             {
-                ApplicationUser applicationUser = new ApplicationUser();
-                applicationUser.Email = registerDTO.Email;
-                applicationUser.UserName = registerDTO.Name;
+                ApplicationUser applicationUser = new ApplicationUser
+                {
+                    Email = registerDTO.Email,
+                    Firstname = registerDTO.FirstName,
+                    Lastname = registerDTO.LastName,
+                    UserName = registerDTO.Username,
+                    PhoneNumber = registerDTO.PhoneNumber,
+                    City = registerDTO.City,
+                    Country = registerDTO.Country,
+                    Address = registerDTO.Address
+                };
 
                 IdentityResult result = await userManager.CreateAsync(applicationUser, registerDTO.Password);
 
@@ -51,6 +60,7 @@ namespace Laundry.Controllers
 
             return BadRequest(ModelState);
         }
+
 
 
         [HttpPost("LogIn")]

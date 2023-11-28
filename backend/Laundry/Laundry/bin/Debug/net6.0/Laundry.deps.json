@@ -13,6 +13,7 @@
           "Microsoft.EntityFrameworkCore": "6.0.25",
           "Microsoft.EntityFrameworkCore.Design": "6.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.25",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
@@ -189,6 +190,11 @@
             "assemblyVersion": "6.0.25.0",
             "fileVersion": "6.0.2523.52312"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.25": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.25"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
@@ -685,6 +691,13 @@
       "sha512": "sha512-/oIgY1cu75FiZc5gDfQQKgL9lv79Vearc+AY5WpZkoA0k+hJnkVYg68mdgbBZkJuyAC93cdKw8UXtCN0sUH7yg==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.25",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.25.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.25": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2iPMR+DHXh2Xn9qoJ0ejzdHblpns73e1pZ/pyRbYDQi0HPJyq1/pTYDda1owJ5W2lxAGDg8l5Fl1jVp97fTR1g==",
+      "path": "microsoft.entityframeworkcore.tools/6.0.25",
+      "hashPath": "microsoft.entityframeworkcore.tools.6.0.25.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
